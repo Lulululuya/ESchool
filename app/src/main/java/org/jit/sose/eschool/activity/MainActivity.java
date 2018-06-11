@@ -27,6 +27,9 @@ import java.util.List;
 @EActivity(R.layout.main)
 public class MainActivity extends AppCompatActivity {
 
+    //版本V0.0.2
+    //版本V0.0.3
+
     // 实例化fragmentcontroller（fragment的管理类）
     private MainFragmentController mainFragmentController;
 
