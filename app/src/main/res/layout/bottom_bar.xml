@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/gray_white"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bottom_bar_bg"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="8dip" >
+
+        <RadioGroup
+            android:id="@+id/rg_bottomBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <RadioButton
+                android:checked="true"
+                android:id="@+id/rb_school"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:button="@null"
+                android:drawableTop="@drawable/rb_school"
+                android:text="@string/schoolStr"
+                />
+
+            <RadioButton
+                android:id="@+id/rb_course"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:button="@null"
+                android:drawableTop="@drawable/rb_course"
+                android:text="@string/courseStr"
+                />
+
+            <RadioButton
+                android:id="@+id/rb_leave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:button="@null"
+                android:drawableTop="@drawable/rb_leave"
+                android:text="@string/leaveStr"
+                />
+
+            <RadioButton
+                android:id="@+id/rb_person"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:button="@null"
+                android:text="@string/personStr"
+                android:drawableTop="@drawable/rb_person"
+                />
+        </RadioGroup>
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>

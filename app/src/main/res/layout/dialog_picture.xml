@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_dialog"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/dialog_choosePicture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:padding="12dp"
+        android:text="@string/choosepictureStr"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/commonfontSize" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimary" />
+
+    <TextView
+        android:id="@+id/dialog_takephotos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/dialog_choosePicture"
+        android:layout_alignStart="@+id/dialog_choosePicture"
+        android:layout_gravity="center_horizontal"
+        android:lineSpacingExtra="3dp"
+        android:padding="12dp"
+        android:text="@string/takephotoStr"
+        android:textColor="@color/txt_gray"
+        android:textSize="@dimen/commonfontSize" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/font_bg" />
+
+    <TextView
+        android:id="@+id/dialog_photos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:text="@string/photosStr"
+        android:textSize="@dimen/commonfontSize"
+        android:textColor="@color/txt_gray"
+        android:layout_marginTop="10dp"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/font_bg" />
+
+    <TextView
+        android:id="@+id/dialog_piccancal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/cancelStr"
+        android:padding="12dp"
+        android:textColor="@color/txt_gray"
+        android:textSize="@dimen/commonfontSize"
+        android:layout_marginTop="10dp"
+        />
+
+</LinearLayout>

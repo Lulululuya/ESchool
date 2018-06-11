@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">ESchool</string>
+
+    <string name="leaveStr">请假</string>
+    <string name="courseStr">课程表</string>
+    <string name="messageStr">消息</string>
+    <string name="personStr">我的</string>
+    <string name="schoolStr">校园</string>
+    <string name="leaveKindStr">请假类型</string>
+    <string name="myLeaveStr">我的假期</string>
+    <string name="beginLeaveStr">开始时间</string>
+    <string name="endLeaveStr">结束时间</string>
+    <string name="timeStr">时长(小时):</string>
+    <string name="hintTimeStr">请输入时长(必填)</string>
+    <string name="leaveReasonStr">请假事由：</string>
+    <string name="pictureStr">图片</string>
+    <string name="hintLeaveReasonStr">请输入请假事由(必填)</string>
+    <string name="approverStr">审批人</string>
+    <string name="teacherStr">李老师</string>
+    <string name="instructorStr">孙辅导员</string>
+    <string name="submitStr">提交</string>
+    <string name="socailStr">校园社交</string>
+    <string name="YxxStr">约学习</string>
+    <string name="YydStr">约健身</string>
+    <string name="YkdStr">代拿快递</string>
+    <string name="YjsStr">约健身</string>
+    <string name="YsyStr">约摄影</string>
+
+    <string name="cancelStr">返回</string>
+    <string name="confirmStr">确认</string>
+    <string name="hintStr">提示</string>
+    <string name="choosepictureStr">选择图片</string>
+    <string name="takephotoStr">拍照</string>
+    <string name="photosStr">相册</string>
+</resources>
