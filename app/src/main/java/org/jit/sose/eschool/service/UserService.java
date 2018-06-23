@@ -7,8 +7,12 @@ import org.androidannotations.api.rest.MediaType;
 import org.jit.sose.eschool.config.ServerConfiguration;
 import org.springframework.http.converter.StringHttpMessageConverter;
 
-/** 处理用户登录注册等一系列的网络请求的接口
- * Created by chenmin on 2018/6/13.
+
+/**
+ * Author: chenmin
+ * Date: 2018/6/23
+ * GITHUB: https://github.com/JKchenmin/
+ * Description: 处理用户登录注册等一系列的网络请求的接口
  */
 @Rest(rootUrl = ServerConfiguration.BASEURL, converters = {StringHttpMessageConverter.class })
 public interface UserService {
@@ -20,7 +24,7 @@ public interface UserService {
 
 
     //注册的网络请求
-    @Post(ServerConfiguration.LOGIN_DO + "?username={username}&pwd={pwd}")
+    @Post(ServerConfiguration.REGISTER_DO + "?username={username}&pwd={pwd}")
     @Accept(MediaType.APPLICATION_JSON)
     String register(String username,String pwd);
 }

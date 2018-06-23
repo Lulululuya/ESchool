@@ -12,6 +12,12 @@ import org.jit.sose.eschool.fragment.SchoolFragment_;
 import java.util.ArrayList;
 
 
+/**
+ * Author: chenmin
+ * Date: 2018/6/23
+ * GITHUB: https://github.com/JKchenmin/
+ * Description: Fragment切换的管理类，实现在MainActivity中显示和隐藏Fragment
+ */
 public class MainFragmentController {
 
     private ArrayList<Fragment> fragments;
