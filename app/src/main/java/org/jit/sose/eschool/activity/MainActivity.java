@@ -1,40 +1,27 @@
 package org.jit.sose.eschool.activity;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
-import android.util.DisplayMetrics;
 import android.util.Log;
-import android.view.View;
-import android.widget.AbsListView;
 import android.widget.RadioGroup;
 
-import com.ab.view.titlebar.AbBottomBar;
-import com.ab.view.titlebar.AbTitleBar;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
 import org.jit.sose.eschool.R;
 import org.jit.sose.eschool.controller.MainFragmentController;
-import org.jit.sose.eschool.lunbotu.ImageBarnnerFramLayout;
-import org.jit.sose.eschool.lunbotu.ImageBarnnerWidth;
 
-import java.util.ArrayList;
-import java.util.List;
 
 @EActivity(R.layout.main)
 public class MainActivity extends AppCompatActivity {
 
-    //版本V0.0.2
-    //版本V0.0.3
 
     // 实例化fragmentcontroller（fragment的管理类）
     private MainFragmentController mainFragmentController;
 
-    private AbTitleBar mAbtitleBar;         // 顶部标题栏控件
-    private AbBottomBar mAbBottomBar;       // 底部标题栏控件
+    //private AbTitleBar mAbtitleBar;         // 顶部标题栏控件
+    //private AbBottomBar mAbBottomBar;       // 底部标题栏控件
 
     //private RadioGroup rb_bottomBar;
 
@@ -45,15 +32,6 @@ public class MainActivity extends AppCompatActivity {
     @ViewById(R.id.rg_bottomBar)
     RadioGroup rb_bottomBar;
 
-/*    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setAbContentView(R.layout.main);
-
-        initWidget();                                   //绑定控件
-        initMainTitle();                                //初始化顶部标题栏
-        initFragment();                                 //初始化底部导航栏的fragment
-    }*/
 
 
     @AfterViews
@@ -88,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         mAbBottomBar.setBottomView(view);
     }*/
 
-    //初始化底部导航栏显示的按钮
+    //初始化底部导航栏显示的按钮（通过RadioGroup来绑定Fragment）
     void initFragment(){
         mainFragmentController = MainFragmentController.getInstance(this, R.id.content);
         mainFragmentController.showFragment(0);

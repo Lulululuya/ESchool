@@ -9,7 +9,12 @@ import android.widget.TextView;
 
 import org.jit.sose.eschool.R;
 
-
+/**
+ * Author: chenmin
+ * Date: 2018/6/23
+ * GITHUB: https://github.com/JKchenmin/
+ * Description: 实现自定义的Dialog布局
+ */
 public class PictureDialog extends Dialog implements View.OnClickListener {
     private TextView takephotosTV;
     private TextView titleTxt;

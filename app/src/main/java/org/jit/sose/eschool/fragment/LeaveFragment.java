@@ -18,7 +18,7 @@ import org.androidannotations.annotations.EFragment;
 import org.androidannotations.annotations.ViewById;
 import org.jit.sose.eschool.R;
 import org.jit.sose.eschool.UI.PictureDialog;
-import org.jit.sose.eschool.global.Config;
+import org.jit.sose.eschool.config.Parameter;
 
 import java.util.Calendar;
 
@@ -101,13 +101,13 @@ public class LeaveFragment extends Fragment {
                     photoUri = Uri.fromFile(photoFile);
                     intent.putExtras(bundle);
                     intent.putExtra(MediaStore.EXTRA_OUTPUT, photoUri);*/
-                    startActivityForResult(intent, Config.TAKE_PHOTO);
+                    startActivityForResult(intent, Parameter.TAKE_PHOTO);
                     dialog.dismiss();
                 } else if (confirm == 2) {
                     //获取手机相册里面的图片
                     Intent intentFromAlbum = new Intent(Intent.ACTION_GET_CONTENT);         //ACTION_GET_CONTENT
                     intentFromAlbum.setType("image/*");                                     // 设置文件类型
-                    startActivityForResult(intentFromAlbum, Config.PICK_PHOTO);
+                    startActivityForResult(intentFromAlbum, Parameter.PICK_PHOTO);
                     dialog.dismiss();
                 }
             }

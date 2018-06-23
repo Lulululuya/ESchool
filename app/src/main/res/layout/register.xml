@@ -62,7 +62,7 @@
         android:text="@string/register"
         android:layout_below="@+id/tv2"
         android:layout_alignLeft="@+id/et2"
-        android:background="#e000000"
+        android:background="@color/font_bg"
         />
 
 
