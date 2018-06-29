@@ -19,12 +19,12 @@ import org.jit.sose.eschool.config.Parameter;
 import static org.jit.sose.eschool.config.Parameter.SHAREDPREFERENCE_NAME;
 
 /**
- * Author: chenmin
+ * Author: chenlu
  * Date: 2018/6/23
- * GITHUB: https://github.com/JKchenmin/
+ * GITHUB: https://github.com/Lulululuya/ESchool
  * Description: 用户个人中心的Fragment
  */
-@EFragment(R.layout.personfragment)
+@EFragment(R.layout.personfragment)             //绑定personfragment.xml
 public class PersonalFragment extends Fragment {
 
 
@@ -37,6 +37,7 @@ public class PersonalFragment extends Fragment {
     //当Fragment加载完到界面上时所执行的方法
     @AfterViews
     void showMy(){
+
         showUser();
     }
 
@@ -44,10 +45,12 @@ public class PersonalFragment extends Fragment {
     //点击登录控件跳转到登录界面,如果已经登录则跳转到个人中心的详情界面
     @Click(R.id.LineLayout_login)
     void goLoin(){
+        //如果SharedPreferences中islog为false，则跳转到用户登录注册的界面
         if(!islog()) {
             Intent intent = new Intent(getActivity(), LoginActivity_.class);
             startActivity(intent);
         }else {
+            //如果SharedPreferences中islog为true，则跳转到个人中心的详情界面
             Intent intent = new Intent(getActivity(), PersonalActivity_.class);
             startActivity(intent);
         }
@@ -57,6 +60,7 @@ public class PersonalFragment extends Fragment {
 
     //获得用户是否登录的标识
     boolean islog(){
+        //从SharedPreferences获取用户登录标识（islog）
         SharedPreferences preferences=getActivity().getSharedPreferences(SHAREDPREFERENCE_NAME, Context.MODE_PRIVATE);
         String username=preferences.getString(Parameter.USERNAME, "点击登录");
         boolean islog = preferences.getBoolean(Parameter.ISLOG,false);
