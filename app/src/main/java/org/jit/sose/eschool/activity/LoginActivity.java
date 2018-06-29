@@ -23,12 +23,12 @@ import static android.content.ContentValues.TAG;
 import static org.jit.sose.eschool.config.Parameter.SHAREDPREFERENCE_NAME;
 
 /**
- * Author: chenmin
+ * Author: chenlu
  * Date: 2018/6/23
- * GITHUB: https://github.com/JKchenmin/
+ * GITHUB: hhttps://github.com/Lulululuya/ESchool
  * Description: 处理用户登录及注册的activity
  */
-@EActivity(R.layout.login)
+@EActivity(R.layout.login)              //绑定到login.xml的视图界面
 public class LoginActivity extends Activity {
 
     //创建上下文的实例
@@ -44,7 +44,7 @@ public class LoginActivity extends Activity {
     @ViewById(R.id.btn_register)
     Button registerBtn;
 
-    //使用依赖注入创建接口的实例
+    //使用依赖注入创建接口的实例，创建的是UserVice的网络请求的接口
     @RestService
     UserService userservice;
 
@@ -59,13 +59,23 @@ public class LoginActivity extends Activity {
         //判断用户名或密码是否为空
         //不为空则执行用户登录的网络请求
         if (username.length()>0 && passwd.length()>0){
-            //调用登录的接口，实现用户登录功能
+            //调用登录的接口，实现用户登录功能，并将方法执行返回的结果赋值给loginResult的的字符串
+           /*
+           登录成功时loginResult的数据：
+           {
+                "logResult": "登陆成功",                 //登录的具体结果
+                    "logFlag": 1,                       //登录结果的标识
+                    "username": "chenlu"
+            }*/
             String loginResult = userservice.login(username,passwd);
             try {
+                //使用JSONObject的数据类型来解析loginResult（登陆的结果）。
                 JSONObject json = new JSONObject(loginResult);
                 String logFlag = json.getString(Parameter.LOGFLAG);
                 final String logResult = json.getString(Parameter.LOGRESULT);
+                //登录成功时候所执行的方法
                 if(logFlag.equals(Parameter.LOGINSUCCESSFLAG)) {
+                    //将登录成功的用户名存入SharedPreferences中
                     SharedPreferences preferences=getSharedPreferences(SHAREDPREFERENCE_NAME, Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor=preferences.edit();
                     editor.putString(Parameter.USERNAME, username); //将登录成功的用户名存入SharedPrefence中
@@ -73,6 +83,7 @@ public class LoginActivity extends Activity {
                     editor.commit();
                     finish();
                 }else {
+                    //登录失败所调用的方法
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
@@ -106,12 +117,21 @@ public class LoginActivity extends Activity {
         //判断用户名或密码是否为空
         //不为空则执行用户注册的网络请求
         if (username.length()>0 && passwd.length()>0){
-            //调用登录的接口，实现用户登录功能
+            //调用注册的网络请求的接口，实现用户注册功能，并将注册的结果赋值给registerResult
+            /*注册成功时候的registerResult的数据为：
+            {
+                "regResult": "注册成功",
+                    "username": "chenmin"
+            }
+            */
             String registerResult = userservice.register(username,passwd);
             try {
+                //使用JSONObject的数据类型来解析registerResult（注册的结果）。
                 JSONObject json = new JSONObject(registerResult);
                 final String regResult = json.getString(Parameter.REGRESULT);
+                //注册成功所执行的方法
                 if(regResult.equals(Parameter.REGISTERSUCCESS)) {
+                    //将注册的用户信息存进SharedPreferences中
                     SharedPreferences preferences=getSharedPreferences(SHAREDPREFERENCE_NAME, Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor=preferences.edit();
                     editor.putString(Parameter.USERNAME, username);     //将注册成功的用户名存入SharedPrefence中
@@ -119,6 +139,7 @@ public class LoginActivity extends Activity {
                     editor.commit();
                     finish();
                 }else {
+                    //注册失败所执行的方法
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {

@@ -18,9 +18,9 @@ import static org.jit.sose.eschool.config.Parameter.SHAREDPREFERENCE_NAME;
 
 
 /**
- * Author: chenmin
+ * Author: chenlu
  * Date: 2018/6/23
- * GITHUB: https://github.com/JKchenmin/
+ * GITHUB: https://github.com/Lulululuya/ESchool
  * Description: 用户个人中心详情的Activity
  */
 @EActivity(R.layout.personality)
@@ -34,15 +34,19 @@ public class PersonalActivity extends Activity{
     @ViewById(R.id.btn_exit)
     Button exitBtn;
 
+    //当前界面加载成功所执行的方法
     @AfterViews
     void init(){
-        showUser();
+
+        showUser();             //显示用户个人信息
     }
 
     //显示个人信息
     void showUser(){
+        //从SharedPreferences获取用户名
         SharedPreferences preferences=getSharedPreferences(SHAREDPREFERENCE_NAME, Context.MODE_PRIVATE);
         String username=preferences.getString(Parameter.USERNAME, "点击登录");
+        //加用户名渲染到userNameTV的控件上
         userNameTV.setText(username);
     }
 
