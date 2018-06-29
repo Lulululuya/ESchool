@@ -13,53 +13,56 @@
         android:textSize="40dp"
         android:textColor="#999999"
         android:layout_marginTop="66dp"
-        android:layout_alignLeft="@+id/et1"
+        android:layout_alignLeft="@+id/edit_username"
         />
 
-
+    <!--用户名输入框-->
     <EditText
-        android:id="@+id/et1"
+        android:id="@+id/edit_username"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:hint="Username"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="166dp" />
 
+    <!--密码输入框-->
     <EditText
-        android:id="@+id/et2"
+        android:id="@+id/edit_password"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:hint="Password"
-        android:layout_below="@id/et1"
+        android:layout_below="@id/edit_username"
         />
 
+    <!--登录按钮-->
     <Button
-        android:id="@+id/bt1"
+        android:id="@+id/btn_login"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:text="@string/login"
-        android:layout_below="@+id/et2"
-        android:layout_alignLeft="@+id/et2"
-        android:background="#e000000"
+        android:layout_below="@id/edit_password"
+        android:layout_alignLeft="@id/edit_password"
+        android:background="@color/font_bg"
         />
 
     <TextView
         android:id="@+id/tv2"
         android:layout_width="match_parent"
         android:layout_height="15dp"
-        android:layout_below="@+id/bt1"
+        android:layout_below="@+id/btn_login"
         />
 
+    <!--注册按钮-->
     <Button
-        android:id="@+id/bt2"
+        android:id="@+id/btn_register"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:text="@string/register"
         android:layout_below="@+id/tv2"
-        android:layout_alignLeft="@+id/et2"
-        android:background="#e000000"
+        android:layout_alignLeft="@id/edit_password"
+        android:background="@color/font_bg"
         />
 
 
